@@ -1,0 +1,13 @@
+app:
+  image: docker
+  services:
+    - docker:dind
+  before_script:
+    - apk add docker
+    - apk add py-pip
+    - apk add python-dev libffi-dev openssl-dev gcc libc-dev make
+    - pip install docker-compose
+  script:
+    - docker-compose up
+    - docker exec -it app bash
+    - go test ./... -race
