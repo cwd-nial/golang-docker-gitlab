@@ -6,6 +6,5 @@ import (
 )
 
 func TestService_Main(t *testing.T) {
-	main()
-	assert.True(t, true)
+	assert.False(t, true)
 }
