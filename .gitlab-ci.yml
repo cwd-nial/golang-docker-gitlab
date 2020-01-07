@@ -1,6 +1,4 @@
 test:
   image: golang:latest
-  before_script:
-    - ǵo mod download
   script:
     - go test ./...
